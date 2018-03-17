@@ -3,7 +3,7 @@
     "lang": "pl",
     "name": "AutoKrowa",
     "short_name": "AutoKrowa",
-    "start_url": "autokrowa.pl",
+    "start_url": "http://autokrowa.pl",
     "display": "fullscreen",
     "orientation": "portrait",
     "background_color": "#fff",
@@ -14,7 +14,7 @@
             "sizes": "48x48",
             "type": "image/png"
         },
-        {
+        { 
             "src": "images/touch/icon72.png",
             "sizes": "72x72",
             "type": "image/png"
