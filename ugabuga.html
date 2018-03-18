@@ -26,20 +26,16 @@
 
     <form id="frm1" method="post" action="/action_page.php">
             <div>
-                <label for="xlocals">X:</label>
-                <input type="text" name="xlocals" id="xlocals" value="" />
-            </div>
-            <div>
-                <label for="ylocals">Y:</label>
-                <input type="text" name="ylocals" id="ylocals" value="" />
-            </div>
-            <div>
                 <label for="ulica">Ulica:</label>
                 <input type="text" name="ulica" id="ulica" value="" />
             </div>
             <div>
                 <label for="numer">:</label>
                 <input type="number" name="number" id="number" value="" />
+            </div>
+            <div>
+                <label for="miasto">Miasto:</label>
+                <input type="text" name="miasto" id="miasto" value=""/>
             </div>
             <div>
                 <label for="email">E-mail:</label>
@@ -57,6 +53,11 @@
                 <label for="zdjecie">Przeslij odpowiednie zdjecie tutaj:</label>
                 <br/>
                 <input type="file" name=""/>
+            </div>
+            <div>
+                <label for="opis">Opisz zaistniala sytuacje</label>
+                <textarea rows="4" cols="50" name="opis" id="opis" value="">
+                    </textarea>
             </div>
             <div>
                 <input type="button" onclick="SaveLocal()" value="Zapisz"/>
