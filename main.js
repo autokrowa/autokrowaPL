@@ -1,6 +1,6 @@
 
-var x = 0;
-var y = 0;
+var x = 0.01;
+var y = 0.01;
 
 function LoadLocal() {
 	document.forms.frm1.nazwisko.value = 									
@@ -46,13 +46,14 @@ function SaveLocal() {
 
 function GMAAdress(){
     var geocoder = new google.maps.Geocoder;
-    var latlng = {lat: parseFloat(document.forms.frm1.xlocals.value), lng: parseFloat(document.forms.frm1.ylocals.value)};
+    var latlng = {lat: parseFloat(x), lng: parseFloat(y)};
         geocoder.geocode({'location': latlng}, function(results, status) {
             if(status === "OK"){
                 if(results[0]){
-            console.log(results[0].formatted_address);
+            console.log(results);
             document.forms.frm1.number.value = parseInt(results[0].address_components[0].long_name);
             document.forms.frm1.ulica.value = (results[0].address_components[1].long_name);
+            document.forms.frm1.miasto.value = (results[0].address_components[3].long_name);
             }
         }
         });
@@ -69,14 +70,14 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition)        
     } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
+        // = "Geolocation is not supported by this browser.";
     }
 }
 function showPosition(position) {
-    var x = document.getElementById("xlocals");
-    var y = document.getElementById("ylocals");
-    x.value = position.coords.latitude;
-    y.value = position.coords.longitude;
+    //var x = document.getElementById("xlocals");
+    //var y = document.getElementById("ylocals");
+    x = position.coords.latitude;
+    y = position.coords.longitude;
     //GetMeStreetYo();
     GMAAdress();
 }
